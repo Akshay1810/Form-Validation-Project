@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Form</title>
+    <style>
+        body {
+            background-image: url(patrick-fore-0gkw_9fy0eQ-unsplash.jpg);
+            background-size: cover;
+            font-family: poppins;
+        }
+
+        #container p {
+            font-family: sans-serif;
+            font-size: 1em;
+            color: #fff;
+            margin-bottom: 3px;
+        }
+
+        #container {
+            width: 500px;
+            height: 550px;
+            margin: 60px auto 0;
+            background: rgba(0, 0, 0, 0.6);
+            text-align: center;
+            padding: 35;
+            border: 3px solid #fff;
+            border-radius: 70px 0 70px 0;
+
+        }
+
+        .form h2 {
+            margin-bottom: 30px;
+            color: #fff;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+
+
+        input {
+            width: 450px;
+            height: 50px;
+            border-radius: 10px 0 10px 0;
+            border: 2px solid gray;
+            background: transparent;
+            color: #fff;
+
+        }
+
+        .box p {
+            text-align: left;
+            color: #fff;
+            text-transform: uppercase;
+            font-weight: bold;
+
+        }
+
+        .pass {
+            text-decoration: none;
+            display: block;
+            margin-top: 30px;
+            font-weight: bold;
+            font-size: 20px;
+            color: #fff;
+            font-family: monospace;
+        }
+
+        input[type="submit"] {
+            background-color: rgba(119, 78, 3, 0.726);
+            margin-top: 20px;
+
+        }
+
+        .error {
+            color: red;
+            margin: 0px;
+            text-align: left;
+            padding-left: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <h2>Login Form</h2>
+        <form action="" onsubmit="return validateform()">
+            <p>Name:</p>
+            <input type="text" id="name" placeholder="User Name" >
+            <p id="usererr" class="error"></p>
+            <p>Email:</p>
+            <input type="Email" id="id" placeholder="Email Address">
+            <p id="mailerr" class="error"></p>
+            <p>Password</p>
+            <input type="password" id="pass" placeholder="Password">
+            <p id="passerr" class="error"></p>
+            <input type="submit">
+            <a href='https//:www.abc.com' class="pass">Forgot Password</a>
+        </form>
+    </div>
+    <script>
+        let userName = document.getElementById("name");
+        let email = document.getElementById("id");
+        let password = document.getElementById("pass");
+        let flag = 1;
+
+        function validateform() {
+            if (userName.value == "") {
+                document.getElementById("usererr").innerHTML = "required*";
+                flag = 0;
+            } else if (userName.value.length < 3) {
+                document.getElementById("usererr").innerHTML = "min 3 characters req";
+                flag = 0;
+            } else {
+                document.getElementById("usererr").innerHTML = "";
+                flag = 1;
+            }
+
+
+            if (password.value == "") {
+                document.getElementById("passerr").innerHTML = "required*";
+                flag = 0;
+            } else if (password.value.length < 5) {
+                document.getElementById("passerr").innerHTML = "min 5 characters req";
+                flag = 0;
+            } else {
+                document.getElementById("passerr").innerHTML = "";
+                flag = 1;
+            }
+            if (flag) {
+                return True;
+            }
+            else {
+                return False;
+            }
+        }
+
+    </script>
+</body>
+
+</html>
